@@ -1,0 +1,4 @@
+##Ignore VS2026 temporay files
+
+.vs/
+.vscode/
