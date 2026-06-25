@@ -4,10 +4,10 @@ const fs = require('fs')
 const port = 80
 
 const server = http.createServer((request, response) => {
-    const content = fs.readFileSync('src/hello.txt', 'utf8')
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
-    response.write(content)
-    response.end('Version: ' + process.env.NODE_VERSION + '\n')
+    const content = fs.readFileSync('/src/hello.txt', 'utf8')
+    response.writeHead(200, { 'Content-Type': 'text/html' })
+    response.write(`<pre>${content}</pre>`)
+    response.end('<p>Version: ' + process.env.NODE_VERSION + '</p>')
 })
 
 server.listen(port)
